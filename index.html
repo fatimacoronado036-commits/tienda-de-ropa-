@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Looks Amazing | Moda para mujer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;600&family=Yellowtail&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="promo" id="promo"></div>
+<header class="top">
+  <div class="top-row">
+    <button class="brand" data-act="nav" data-route="inicio" aria-label="Looks Amazing, ir al inicio">
+      <img src="images/logo-icon.jpg" onerror="this.style.display='none'" alt="">
+      <b>looks amazing</b>
+    </button>
+    <div class="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg>
+      <label class="sr" for="q">Buscar productos</label>
+      <input id="q" type="search" placeholder="Buscar blusas, vestidos, bolsos…" autocomplete="off">
+    </div>
+    <div class="actions">
+      <button class="icon-btn" data-act="nav" data-route="pedidos" aria-label="Mis pedidos">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7l8-4 8 4v10l-8 4-8-4z"/><path d="M4 7l8 4 8-4M12 11v10"/></svg><span class="lbl">Pedidos</span>
+      </button>
+      <button class="icon-btn" data-act="nav" data-route="admin" aria-label="Administración">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg><span class="lbl">Admin</span>
+      </button>
+      <button class="icon-btn" data-act="cartopen" aria-label="Abrir carrito">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 8h14l-1.2 11.2a2 2 0 01-2 1.8H8.2a2 2 0 01-2-1.8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>
+        <span class="lbl">Carrito</span><span class="count" id="cartCount" hidden>0</span>
+      </button>
+    </div>
+  </div>
+  <nav class="nav" id="nav" aria-label="Categorías"></nav>
+</header>
+
+<main id="app" tabindex="-1"><div class="page"><p class="lead">Cargando la tienda…</p></div></main>
+
+<footer>
+  <div class="in">
+    <div><b>looks amazing</b><p>Haute couture fashion para mujer. Blusas, pantalones, vestidos y accesorios en tonos nude.</p></div>
+    <div><h3>Comprar</h3>
+      <button data-act="cat" data-id="blusas">Blusas</button>
+      <button data-act="cat" data-id="pantalones">Pantalones</button>
+      <button data-act="cat" data-id="vestidos">Vestidos</button>
+      <button data-act="cat" data-id="accesorios">Accesorios</button>
+    </div>
+    <div><h3>Ayuda</h3>
+      <button data-act="nav" data-route="nosotros">Información del proyecto</button>
+      <button data-act="nav" data-route="contacto">Contacto</button>
+      <button data-act="nav" data-route="pedidos">Mis pedidos</button>
+      <p>Proyecto final · Diplomado en Informática</p>
+    </div>
+  </div>
+</footer>
+
+<div id="drawer" role="dialog" aria-modal="true" aria-label="Carrito de compras">
+  <div class="scrim" data-act="cartclose"></div>
+  <aside class="panel" id="drawerPanel"></aside>
+</div>
+<div id="modal" role="dialog" aria-modal="true"><div class="scrim" data-act="close"></div><div class="box" id="modalBox" tabindex="-1"></div></div>
+<div id="confirm" role="alertdialog" aria-modal="true"><div class="scrim"></div><div class="box narrow box-pad" id="confirmBox"></div></div>
+<div class="toasts" id="toasts" aria-live="polite"></div>
+
+<script src="database.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
